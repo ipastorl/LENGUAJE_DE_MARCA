@@ -1,0 +1,203 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video { 
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+    font-size: 100%; 
+    font: inherit; 
+    vertical-align: baseline;
+}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section { 
+    display: block;
+}
+body { 
+    line-height: 1;
+}
+ol,ul { 
+    list-style: none;
+}
+blockquote,q { 
+    quotes: none;
+}
+blockquote:before,blockquote:after,q:before,q:after { 
+    content: ''; 
+    content: none;
+}
+table { 
+    border-collapse: collapse; 
+    border-spacing: 0;
+}
+
+/* ---- GRID ----- */
+.padreGRID1 {
+    /*
+    Para centrar al padre, hay que poner 
+    al abuelo (body en este caso) :
+    display: flex;
+    justify-content: center;
+
+    Después sí funciona esto aquí en el centro,
+    si no, lo deja por defecto a la izquierda (start):
+    width: 90%;
+    */
+    
+    display: grid;
+    /*
+    display: -ms-inline-grid;
+    display: -moz-inline-grid;
+    */
+    grid-template-columns: [_1of4_column] 100px 
+                            [_2of4_column] 50px 
+                            [_3of4_column] 150px 
+                            [_4of4_column] 30px;
+    grid-template-rows: [_1of4_line] 100px
+                        [_2of4_line] 30px
+                        [_3of4_line] 100px
+                        [_4of4_line] 60px;
+    /*Alineacion Horizonal*/
+    justify-items: stretch;
+    /*Alineacion Vertical*/
+    align-items: stretch;
+    /*Distribución Horizontal*/
+    justify-content: stretch;
+    /*Distribución Vertical*/
+    align-content: space-between;
+    /*Distribución Horizonal y Vertical,
+      las dos a la vez: */
+    place-content: stretch center;
+    /*da tamaño auto y además se asegura que 
+    se dibujen celdas si se establecen fuera del grid*/
+    /*
+    rellena primero los huecos, hay que llevar cuidado
+    de usarlo, varía el orden de colocación
+    grid-auto-flow:dense;
+    */
+    grid-auto-rows: 50px;
+}
+.hijo{
+    border: 1em solid black;
+}
+#amarillo {
+    background-color: yellow;
+    grid-column: 2/4;
+    grid-row: 3/5;
+    justify-self: center;
+    align-self: center;
+    padding: 10px;
+}
+/*areas*/
+#verde {
+    background-color: greenyellow;
+    grid-area: 1/1/2/5;
+}
+#naranja {
+    background-color: orange;
+    grid-area: 2/1/3/5;
+}
+#rojo{
+    background-color: red;
+    grid-area:6/4/7/5;
+}
+#gris{
+    background-color: grey;
+    /*se sale del grid la fila hasta 9
+    pero como tiene el grid-auto-row definido
+    se coloca igualmente saliéndose del grid*/
+    grid-area:2/2/9/3;
+}
+
+
+
+/*---- GRID2 -----*/
+.padreGRID2 {
+    min-width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(25,1fr);
+    grid-template-rows: repeat(25,1fr);
+    grid-auto-rows: 1fr;
+    grid-auto-columns:1fr;
+}
+#cabecera {
+    grid-area: 1/1/6/26;
+    background-color: yellow;
+}
+#logo {
+    grid-area:2/3/4/7;
+    background-color: white;
+}
+#textarea {
+    grid-area:2/19/3/23;
+    background-color: white;
+}
+#lupa {
+    grid-area:2/24/3/25;
+    background-color: white;
+}
+#bandera1{
+    grid-area:4/22/5/23;
+    background-color: white;
+}
+#bandera2{
+    grid-area:4/24/5/25;
+    background-color: white;
+}
+#zona_menu{
+    grid-area: 6/2/8/20;
+    background-color: blueviolet;
+}
+#zona_aside{
+    grid-area: 8/20/23/26;
+    background-color: green;
+}
+#zona_carrousel{
+    grid-area: 10/5/16/18;
+    background-color: greenyellow;
+}
+#zona_tarjetas{
+    grid-area: 18/2/22/16;
+    background-color: pink;
+}
+#zona_pie{
+    grid-area: 23/1/26/26;
+    background-color: grey;
+}
+
+
+/* -- GRID 3 --- */
+.padreGRID3 {
+    min-width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(7,auto);
+    grid-template-rows: repeat(5,auto);
+    grid-template-areas:         
+    "cab cab cab cab cab cab cab"
+    "men men men men men men men"
+    ". car car car . asi ."
+    ". tar tar tar . asi ."
+    "pie pie pie pie pie pie pie";
+}
+#cab{
+    background-color: beige;  
+    grid-area: cab;  
+}
+#men{
+    background-color: blue;  
+    grid-area: men;  
+}
+#car{
+    background-color: blanchedalmond;  
+    grid-area: car;  
+}
+#tar{
+    background-color: blueviolet;
+    grid-area: tar;  
+}
+#asi{
+    background-color: bisque;  
+    grid-area: asi; 
+}
+#pie{
+    background-color: burlywood;  
+    grid-area: pie;  
+}
