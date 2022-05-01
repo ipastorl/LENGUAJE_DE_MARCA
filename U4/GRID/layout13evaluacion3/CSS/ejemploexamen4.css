@@ -2,71 +2,63 @@
     margin: 0;
     padding: 0;
     border: 0;
-    width: auto;
+    width: 100%;
     list-style: none;
 }
 .linea{
     display: flex;
     flex-direction: row;
 }
-.lineareves{
-    display: flex;
-    flex-direction: row-reverse;
-}
 .columna{
     display: flex;
     flex-direction: column;
 }
-.separarentre{
-    justify-content: space-between;
-}
 .absoluto{
     position: absolute;
 }
-.derecha{
-    margin-left:70%;
-    margin-top:7%;
-    color:#EC008C;
-    font-weight: bolder;
-    font-size: 2em;
+main{
+    grid-template-columns: 73% 23%;
+    justify-content: space-between;
 }
-.izquierda{
-    margin-left:1%;
-    margin-top:7%;
-    color:#EC008C;
-    font-weight:bolder;
-    font-size: 2em;
+.grid{
+    display: grid;
 }
-.abajo{
-    margin-left:33%;
-    margin-top:13%;
-    color:#EC008C;
-    font-weight:bolder;
-    font-size: 2em;
+aside{
+    grid-template: 50% 50% / 87% 6% ;
+    grid-template-areas:
+    "input input"
+    "china iran";
+    margin-top: 1em;
+}
+#input{
+    grid-area: input;
+    text-align: end;
 }
 input{
     border: 1px solid black;
     border-radius: 2px 2px;
     width: 75%;
+    height: 66%;
+    vertical-align: top;
+}
+#china{
+    grid-area: china;
+    justify-self: end;
+}
+#iran{
+    grid-area: iran;
 }
 #logo{
     width: 50%;
 }
 #lupa{
-    width: 10%;
+    width: 2em;
+    vertical-align: bottom;
 }
 .lado{
-    width: 25%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: right;
-    align-content: flex-end;
-}
-#busqueda{
-    width: 100%;
-    height: 25%;
-    padding-bottom: 10%;
-    justify-content: flex-end;
+    align-content: start;
+    grid-area: 1/2/2/3;
+
 }
 .pais{
     width: 25px;
@@ -86,26 +78,51 @@ input{
     cursor: pointer;
 }
 .cuerpo{
-    width: 73%;
+    grid-template-columns: 1fr;
+}
+.carrousel{
+    grid-template-columns: repeat(3,1fr);
+}
+.carrousel>img{
+    grid-area: 1/1/2/4;
+    justify-content: space-between;
+    height: 100%;
+}
+.manejador{
+    color:#EC008C;
+    font-weight: bolder;
+    font-size: 2em;
+}
+#izquierda{
+    grid-area: 1/1/2/2;
+    align-self: center;
+}
+#derecha{
+    grid-area:1/3/2/4;
+    align-self: center;
+    text-align: right;
+}
+#abajo{
+    grid-area:1/2/2/3;
+    align-self: end;
+    justify-self: center;
+    text-align: center;
+
 }
 .tarjetas{
-    justify-content: space-around;
-    margin: 3% 10%;
+    grid-template-columns: repeat(3,1fr);
+    justify-items: center;
 }
 .tarjeta{
-    justify-content: space-between;
-    width: 23%;
     border:3px solid #EC008C;
     border-radius: 6% 6%;
-    padding:2%;
-}
-.tarjeta>img{
-    margin:10%;
+    padding: 1.2em;
+    max-width: 68%;
+    margin: 2em;
 }
 .tarjeta>p{
-    text-align: center;
-    margin:3% 18% 3% 18%;
     font-weight: bold;
+    text-align: center;
 }
 .pie{
     text-align: center;
