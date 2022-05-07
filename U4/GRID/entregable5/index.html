@@ -1,70 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Ejercicio Práctico GRID</title>
-
-    <link rel="stylesheet" type="text/css" href="css/estilos.css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Lobster"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div class="container">
-      <header>
-        <h1>Ejemplo de Maquetación con Grid</h1>
-        <h4>By @pekechis para @openwebinars</h4>
-      </header>
-      <nav>
-        <div>Inicio</div>
-        <div>Galería</div>
-        <div>Productos</div>
-        <div>Clientes</div>
-        <div>Sobre nosotros</div>
-        <div>Contacto</div>
-      </nav>
-      <main>
-        <img src="img/img1.jpg" />
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure harum
-          dolore expedita recusandae omnis obcaecati praesentium numquam, labore
-          ad libero placeat saepe nemo possimus. Eligendi, magni culpa?
-          Voluptate, eligendi eum.
-        </p>
-      </main>
-
-      <article>
-        <img src="img/img2.jpg" />
-        <h2>Una image bonita de un cielo</h2>
-      </article>
-      <article>
-        <img src="img/img3.jpg" />
-        <h2>Una image bonita de un cielo</h2>
-      </article>
-      <article>
-        <img src="img/img4.jpg" />
-        <h2>Una image bonita de un cielo</h2>
-      </article>
-      <article>
-        <img src="img/img5.jpg" />
-        <h2>Una image bonita de un cielo</h2>
-      </article>
-      <footer>
-        <address>
-          <p>C/ Principal</p>
-          <p>Sevilla</p>
-        </address>
-        <div class="copyright">
-          Todas las fotos realizadas por @pekechis bajo la Licencia CC BY-SA
-        </div>
-        <div class="social">
-          <img src="img/snapchat.jpg" /> <img src="img/facebook.jpg" />
-          <img src="img/twitter.jpg" />
-        </div>
-      </footer>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entregable5</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <div class="container grid">
+        <header class="flex columna" id="h">
+        <h1 class="negrita">Ejemplo de Maquetación con Grid</h1>
+        <h5 class="negrita">por Isabel Pastor para el Entregable5</h5>
+        </header>
+        <nav class="flex columna" id="a">
+            <ul class="flex columna">
+                <li><a class="negrita" href="#">Inicio</a></li>
+                <li><a class="negrita" href="#">Galería</a></li>
+                <li><a class="negrita" href="#">Productos</a></li>
+                <li><a class="negrita" href="#">Clientes</a></li>
+                <li><a class="negrita" href="#">Sobre Nosotros</a></li>
+                <li><a class="negrita" href="#">Contacto</a></li>
+            </ul>
+        </nav>
+        <section class="grid" id="s">
+            <article class="flex columna" id="articulo1">
+                <img src="IMAGES/img1.jpg" alt="cielo nuboso">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio eveniet culpa ipsa voluptate recusandae provident, praesentium necessitatibus blanditiis fugit consequuntur debitis suscipit</p>
+            </article>
+            <article class="flex columna negrita" id="articulo2">
+                <img src="IMAGES/img2.jpg" alt="cielo nuboso">
+            <p>Una imagen bonita de un cielo</p>
+            </article>
+            <article class="flex columna negrita" id="articulo3">
+                <img src="IMAGES/img3.jpg" alt="cielo nuboso">
+            <p>Una imagen bonita de un cielo</p>
+            </article>
+            <article class="flex columna negrita" id="articulo4">
+                <img src="IMAGES/img4.jpg" alt="cielo nuboso">
+            <p>Una imagen bonita de un cielo</p>
+            </article>
+            <article class="flex columna negrita" id="articulo5">
+                <img src="IMAGES/img5.jpg" alt="cielo nuboso">
+            <p>Una imagen bonita de un cielo</p>
+            </article>
+        </section>
+        <footer class="flex linea" id="f">
+            <div class="flex columna" id="direccion">
+                <div class="negrita">C/Principal</div>
+                <div class="negrita">Sevilla</div>
+            </div>
+            <div class="negrita" id="copyright">
+                Todas las fotos realizadas por @pekechis bajo liciencia CC BY SyR
+            </div>
+            <div class="flex linea" id="rrss">
+                <img src="IMAGES/snapchat.jpg" /> 
+                <img src="IMAGES/facebook.jpg" />
+                <img src="IMAGES/twitter.jpg" />
+            </div>
+        </footer>
     </div>
-  </body>
+    
+</body>
 </html>
