@@ -25,7 +25,6 @@ ol,ul {
 
 #container{
     min-width: 100%; /* pantalla completa ancho */
-    min-height: 100vh; /* pantalla completa alto */
 }
 .container_flex{
     display: flex;
@@ -68,7 +67,8 @@ ol,ul {
 }
 #foto{
     grid-area:foto;
-    max-width: 65%;
+    width: 250px;
+    height: 250px;
     justify-self: center;
     border-radius: 15em;
 }
@@ -143,4 +143,55 @@ h4{
 }
 .seccion > div.container_flex.fila.titulo_seccion > span > svg{
     color: #9facab;
+}
+
+/* MEDIA QUERY */
+@media screen and (max-width: 1200px) {
+    #titulo{
+        font-size: 2em;
+    }
+    h3,h4{
+        font-size: 1em ;
+    }
+    h2{
+        font-size: 1.6em ;
+    }
+    #redes > a> svg {
+        width: 36px;
+    }
+    #foto{
+        width: 160px;
+        height: 150px;
+    }
+}
+@media screen and (max-width: 768px) {
+    h2 , #cabecera>h2{
+        font-size: 1.3em;
+    }
+    #foto{
+        display: none;
+    }
+    .container_grid {
+        display: grid;
+        grid-template-columns: 78% auto;
+        grid-template-rows: 2em 2em auto;
+        grid-template-areas:
+            "titulo titulo"
+            "datos redes"
+            "sobremi redes"
+            "sobremi redes";
+        justify-items: stretch;
+        align-items: stretch;
+        justify-content: space-around;
+        align-content: space-around;
+    }
+    #main{
+        flex-direction: column;
+    }
+    #centro {
+        width: 100%;
+    }
+    aside{
+        width: 100% !important;
+    }
 }
