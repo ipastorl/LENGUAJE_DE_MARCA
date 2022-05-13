@@ -1,0 +1,211 @@
+/* -- header -- */
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    align-items: center;
+    padding: 2em;
+    background-color: black;
+    color: white;
+}
+header>i{
+    width: 1%;
+}
+header > img{
+    width: 100px;
+}
+ nav > ul{
+     display: flex;
+     flex-direction: row;
+     padding-right: 32%;
+ }
+/* -- HAMBURGUESA  -- */
+header > i::before{
+    display: none;
+}
+/* -- main -- */
+main{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;    
+    padding: 2em;
+    background-color: black;
+    color: white;
+    margin-bottom: 2em;
+}
+#formulario{
+    max-width: 46%;
+    background-color: white;
+    color: black;
+    padding: 1em;
+    font-weight: bold;
+}
+#formulario > form > input{
+    margin-bottom: 1em;
+    margin-top: 0.5em;
+}
+#formulario > form > button{
+    margin-bottom: 1em;
+    padding: 0.5em;
+    border-radius: 6px;
+    background-color: green;
+    color: white;
+}
+#Built{
+    max-width: 46%;
+    text-align: center;
+}
+/*  -- GitHub -- */
+#GitHub{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2em;
+    text-align: center;
+}
+#GitHub>p{
+    margin-bottom: 2em;
+}
+/* -- central -- */
+#central{
+    display: flex;
+    flex-direction: row;
+}
+#imagen{
+    margin-right: 5%;
+}
+
+/*-- GRID  -- */
+#padretarjetas{
+    display: grid;
+    grid-template-areas: "div1 div2"
+                            "div3 div3";
+    text-align: center;
+    margin-right: 5%;
+}
+#div1{
+    grid-area: div1;
+}
+#div2{
+    grid-area: div2;
+}
+#div3{
+    grid-area: div3;
+    display: flex;
+    flex-direction: column;
+    padding: 1% 12%;
+    text-align: center;
+}
+
+/* -- text -- */
+h1{
+    font-size: x-large;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+h2{
+    font-size: large;
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+h3{
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+
+/*  -- boton -- */
+#GitHub > p:nth-child(4) > a{
+    text-decoration: none;
+    padding: 1em;
+    border: 1px solid blue;
+    border-radius: 2px;
+    margin: 2em;
+}
+/* -- boton formulario oculto-- */
+#button2{
+    display: none;
+}
+
+/* -- media queries -- */
+/*-- 992 px  --*/
+@media screen and (max-width: 992px){
+    main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #formulario, #Built{
+        max-width: 86%;
+        padding-bottom: 1em;
+    }
+    #padretarjetas, #central {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    #div1, #div2, #div3 {
+        margin: 1em 2em 1em 2em;
+        max-width: 80%;
+
+    }
+    #imagen{
+        max-width: 35%;
+        align-self: center;
+        margin-right: 0%;
+    }
+    nav{
+        display: none;
+    }
+    header > i::before{
+        display: flex;
+        width: 20px;
+    }
+    header>i{
+        width: 10%;
+        font-size: 2em !important;
+    }
+    header{  
+        justify-content: space-between;
+    }
+    
+}
+/*-- 576px --*/
+@media screen and (max-width: 576px){
+    #formulario{
+        display: none;
+    }
+    #formulario > form > button{
+        display:flex;
+    }
+    #button2{
+        display:inherit;
+        margin-bottom: 1em;
+        padding: 0.5em;
+        border-radius: 6px;
+        background-color: green;
+        color: white;
+        width: fit-content;
+        margin-left: 30%;
+        margin-top: 2em;
+    }
+     header > img{
+         width: 35px;
+    }
+    nav{
+        display: none;
+    }
+    header>i{
+        width: 10%;
+        font-size: 2em !important;
+    }
+    header > i::before{
+        display: flex;
+        width: 50px;
+        font-weight: 2.5em;
+        margin-right: 2em;
+    }
+    header{  
+        justify-content: space-between;
+    }
+}

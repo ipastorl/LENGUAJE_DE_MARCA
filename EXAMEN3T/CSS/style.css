@@ -1,0 +1,20 @@
+/* --- DISTRIBUCIÓN --- */
+
+.grid{
+    display: grid;
+}
+.flex{
+    display: flex;
+}
+.columna{
+    flex-direction: column;
+}
+.linea{
+    flex-direction: row;
+}
+
+/* --- MEDIA QUERIES --- 
+
+@media screen and (max-width: 600px), (max-height: 500px) {
+}
+*/
