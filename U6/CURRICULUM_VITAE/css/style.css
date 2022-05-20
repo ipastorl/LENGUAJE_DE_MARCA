@@ -1,0 +1,197 @@
+
+/*--- RESET ---*/
+
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video { 
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+    font-size: 100%; 
+    font: inherit; 
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    vertical-align: baseline;
+}
+
+body { 
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+}
+
+ol,ul { 
+    list-style: none;
+}
+
+/*--- DISTRIBUCION ---*/
+
+#container{
+    min-width: 100%; /* pantalla completa ancho */
+}
+.container_flex{
+    display: flex;
+}
+.columna{
+    flex-direction: column;
+}
+.fila {
+    flex-direction: row;
+}
+.container_grid{
+    display: grid;
+    grid-template-columns: 32% 15% auto;
+    grid-template-rows: 3em 4em 3em auto ;
+    grid-template-areas: "titulo titulo foto"
+                         "datos redes foto"
+                         "sobremi redes foto"
+                         "sobremi redes foto"
+                         ;
+    justify-items: stretch;
+    align-items: stretch;
+    justify-content: space-around;
+    align-content: space-around;
+}
+#titulo{
+    grid-area: titulo;
+    font-size: 3em;
+    font-weight: 600;
+}
+#datos{
+    grid-area: datos;
+}
+#sobremi{
+    grid-area: sobremi;
+}
+#redes{
+    grid-area:redes;
+    justify-self: center;
+    align-self: center;
+}
+#foto{
+    grid-area:foto;
+    width: 250px;
+    height: 250px;
+    justify-self: center;
+    border-radius: 15em;
+}
+#centro{
+    width: 62%;
+}
+aside{
+    width: 38%;
+}
+.seccion{
+    padding: 1em;
+}
+/* --- FONDOS COLOR --- */
+
+#cabecera{
+    background-color: #343C4F ;
+    background: #343C4F url("../img/setasfiltroazul.jpg.png") no-repeat scroll 0px 0px;
+    color:#B9C9C7;
+    padding: 3%;
+}
+aside{
+    background-color:#B9C9C7 ;
+    color:#343C4F
+}
+#redes > a:nth-child(1) > svg , #redes > a:nth-child(2) > svg > path{
+    color: #B9C9C7;
+    margin-right: 1em;
+}
+
+/*---- ASPECTO ----*/
+
+h2{
+    font-size: 2em;
+    padding-bottom: 0.2em;
+    font-weight: 600;
+}
+.seccion > .titulo_seccion{
+    border-bottom: #343C4F 2px solid;
+    justify-content: space-between;
+    margin: 0.5em;
+}
+.titulo_seccion{
+    margin-bottom: 0.8em;
+}
+#cabecera > h2{
+    font-size: 2em;
+    border-bottom: #B9C9C7 2px solid;
+}
+h3{
+    margin-top: 0.8em;
+}
+h4{
+    margin: 0.4em 0.5em 0.5em 1em;
+    font-size: 1.4em;
+}
+#centro > .seccion > div > h4{
+    padding: 0 0 1.4em 1em;
+    border-left: #B9C9C7 5px dotted;
+}
+#centro > .seccion > div {
+    margin: 0 2em 1.4em 0;
+    
+}
+#centro > .seccion > .atributo > p{
+    padding: 0.9em 0.1em 0 1.2em;
+    text-align: right;
+    width: 1.2em;
+    color: #656b6b;
+}
+.atributo{
+    margin-bottom: 0 !important;
+}
+.seccion > div.container_flex.fila.titulo_seccion > span > svg{
+    color: #9facab;
+}
+
+/* MEDIA QUERY */
+@media screen and (max-width: 1200px) {
+    #titulo{
+        font-size: 2em;
+    }
+    h3,h4{
+        font-size: 1em ;
+    }
+    h2{
+        font-size: 1.6em ;
+    }
+    #redes > a> svg {
+        width: 36px;
+    }
+    #foto{
+        width: 160px;
+        height: 150px;
+    }
+}
+@media screen and (max-width: 768px) {
+    h2 , #cabecera>h2{
+        font-size: 1.3em;
+    }
+    #foto{
+        display: none;
+    }
+    .container_grid {
+        display: grid;
+        grid-template-columns: 78% auto;
+        grid-template-rows: 2em 2em auto;
+        grid-template-areas:
+            "titulo titulo"
+            "datos redes"
+            "sobremi redes"
+            "sobremi redes";
+        justify-items: stretch;
+        align-items: stretch;
+        justify-content: space-around;
+        align-content: space-around;
+    }
+    #main{
+        flex-direction: column;
+    }
+    #centro {
+        width: 100%;
+    }
+    aside{
+        width: 100% !important;
+    }
+}
