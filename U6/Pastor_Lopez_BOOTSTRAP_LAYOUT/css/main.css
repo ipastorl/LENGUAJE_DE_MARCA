@@ -50,6 +50,23 @@ a.color1:hover{
     color:azure;
 }
 /*-- MEDIA QUERYS --*/
+
+/*--  Small devices (landscape phones, 576px and down) --*/
+@media (max-width: 576px) { 
+    .fotoperfil{
+        display: none;
+    }
+    .col-1{
+        width: 100%;
+    }
+    .pie{
+        flex-direction: column;
+    }
+    .pie>div{
+        text-align: center;
+        width: 100%;
+    }
+}
 /*--  Small devices (landscape phones, 768px and down) --*/
 @media (max-width: 768px) { 
     .fotoperfil{
